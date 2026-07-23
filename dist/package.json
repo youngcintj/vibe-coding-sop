@@ -1,0 +1,38 @@
+{
+  "name": "vibe-coding-sop",
+  "version": "1.0.0",
+  "description": "5-阶段+4-横向+6-维技术评估的 vibe-coding 标准 SOP(纯 Markdown skill,可装入支持 skills 生态的 AI 客户端)",
+  "files": [
+    "SKILL.md",
+    "README.md",
+    "prompts/",
+    "references/",
+    ".cursorrules",
+    "CLAUDE.md"
+  ],
+  "keywords": [
+    "vibe-coding",
+    "sop",
+    "workflow",
+    "pm",
+    "ai-coding",
+    "spec-driven",
+    "code-review"
+  ],
+  "author": "youngcintj <youngcintj@users.noreply.github.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youngcintj/vibe-coding-sop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/youngcintj/vibe-coding-sop/issues"
+  },
+  "homepage": "https://github.com/youngcintj/vibe-coding-sop#readme",
+  "skills": [
+    {
+      "name": "vibe-coding-sop",
+      "description": "5-阶段 vibe-coding SOP,触发于 AI 写代码任务(后端/前端/全栈/脚本)。含需求确认/技术评估/开发/测试/代码审查 5 阶段 + 4 横向要求 + 6 维评估矩阵。"
+    }
+  ]
+}
