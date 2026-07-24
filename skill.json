@@ -2,32 +2,27 @@
   "name": "vibe-coding-sop",
   "version": "1.1.1",
   "description": "5-阶段+4-横向+6-维技术评估的 vibe-coding 标准 SOP",
-  "skills": {
-    "required": [
-      "brainstorming",
-      "idea-refine",
-      "tech-stack-evaluator",
-      "git-workflow-and-versioning",
-      "api-and-interface-design",
-      "frontend-ui-engineering",
-      "code-review-and-quality",
-      "code-test-expert",
-      "incremental-implementation"
-    ],
-    "optional": [
-      "doubt-driven-development",
-      "using-git-worktrees",
-      "source-driven-development",
-      "security-and-hardening",
-      "systematic-debugging",
-      "observability-and-instrumentation",
-      "design-taste-frontend",
-      "impeccable",
-      "design-is",
-      "test-driven-development",
-      "requesting-code-review",
-      "receiving-code-review"
-    ]
-  },
-  "note": "首次运行 skill 时会自动检查缺失的 required skills，如有缺失会在阶段前置检查中提示安装。可通过 npx skills add <skill-name> 安装缺失的 skill。"
+  "note": "每个阶段独立列出 required/optional skills，不需要一次性装完所有 skill。按阶段安装即可。",
+  "skills_by_stage": {
+    "阶段1-需求确认": {
+      "required": ["brainstorming", "idea-refine"],
+      "optional": ["interview-me", "plan-mode"]
+    },
+    "阶段2-技术评估": {
+      "required": ["tech-stack-evaluator"],
+      "optional": ["doubt-driven-development"]
+    },
+    "阶段3-开发": {
+      "required": ["git-workflow-and-versioning", "api-and-interface-design", "frontend-ui-engineering", "incremental-implementation"],
+      "optional": ["using-git-worktrees", "source-driven-development", "security-and-hardening", "systematic-debugging", "observability-and-instrumentation", "design-taste-frontend", "impeccable", "design-is", "UI Design Master"]
+    },
+    "阶段4-测试": {
+      "required": ["code-test-expert", "verification-before-completion"],
+      "optional": ["test-driven-development"]
+    },
+    "阶段5-代码审查": {
+      "required": ["code-review-and-quality"],
+      "optional": ["requesting-code-review", "receiving-code-review"]
+    }
+  }
 }

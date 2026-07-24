@@ -23,28 +23,10 @@ PM 派给 AI 的代码任务，统一按此流程走：需求 → 评估 → 开
 
 ### 依赖检查（首次运行必做）
 
-检查以下 required skills 是否已安装。未安装时用 `npx skills add <name>` 补装，或跳过该 skill 按内联指令执行。
+**每阶段独立检查**：每个阶段列出自己的 required/optional，不要求一次性装完所有 skill。
 
-**Required（核心，必须有）**：
-```
-brainstorming, idea-refine, tech-stack-evaluator,
-git-workflow-and-versioning, api-and-interface-design,
-frontend-ui-engineering, code-review-and-quality,
-code-test-expert, incremental-implementation
-```
-
-**Optional（有则用，无则内联 fallback）**：
-```
-doubt-driven-development, using-git-worktrees,
-source-driven-development, security-and-hardening,
-systematic-debugging, observability-and-instrumentation,
-design-taste-frontend, impeccable, design-is,
-test-driven-development, requesting-code-review,
-receiving-code-review
-```
-
-> 检查方法：列出 `~/.minimax/skills/` 或项目 `skills/` 目录，对照上述列表。
-> 缺失 optional skills 时，直接按 SKILL.md 内联指令执行，不卡流程。
+> 检查方法：`ls ~/.minimax/skills/` 对照各阶段所需列表。
+> 缺失 required skill 时提示安装；缺失 optional 时按内联指令 fallback，不卡流程。
 
 ### 任务类型判断
 
@@ -68,7 +50,11 @@ receiving-code-review
 
 **目标**：把模糊想法变成有验收标准的需求文档。
 
-**Skill**：`brainstorming` + `interview-me` + `idea-refine`
+**所需 Skills**：
+- **Required**：`brainstorming` `idea-refine`
+- **Optional**：`interview-me` `plan-mode`（无则按内联指令替代，不卡流程）
+
+> `brainstorming` 协作式探索；`idea-refine` 打磨成可执行概念。两者都没有时，用内联提问替代。
 
 **做法**：
 1. 用 `interview-me` 逐一挖掘用户真正想要的，而非他们认为应该要的
@@ -107,7 +93,11 @@ PM 明确说了某个技术选型时，相关子选型直接用该栈的最成�
 
 **目标**：用 6 维矩阵选出推荐方案，PM 确认后才进开发。
 
-**Skill**：`tech-stack-evaluator` + `doubt-driven-development`
+**所需 Skills**：
+- **Required**：`tech-stack-evaluator`
+- **Optional**：`doubt-driven-development`（无则跳过，6维矩阵已内置）
+
+> `tech-stack-evaluator` 跑 6 维矩阵；`doubt-driven-development` 做反例挑战。没有时按内联"反例挑战"步骤执行即可。
 
 **做法**：
 1. 用 `tech-stack-evaluator` 对每个技术决策（框架/库/方案）跑 6 维矩阵
@@ -145,9 +135,10 @@ PM 明确说了某个技术选型时，相关子选型直接用该栈的最成�
 **目标**：后端可靠 + 前端有审美 + 设计规范沉淀。
 
 #### 3.0 Git 初始化（强制，第一件事）
-- 主 skill：`git-workflow-and-versioning`
-- 辅助：`using-git-worktrees`
-- **worktree 判断规则（满足任一条件建议用 worktree 隔离）**：
+- **Required**：`git-workflow-and-versioning`
+- **Optional**：`using-git-worktrees`（无则直接在 branch 开发）
+
+**worktree 判断规则（满足任一条件建议用 worktree 隔离）**：
   - 任务涉及 schema/API 契约变更（回滚成本高）
   - PM 要求"先不破坏现有代码"
   - 多人协作同一项目
@@ -159,12 +150,12 @@ PM 明确说了某个技术选型时，相关子选型直接用该栈的最成�
   4. 涉及 schema/阈值/UI 重要位置 → 走 `CHANGELOG.md` append-only 记录
 
 #### 3.1 后端开发
-- 主 skill：`api-and-interface-design`
-- 辅 skill：`source-driven-development`、`security-and-hardening`、`systematic-debugging`、`observability-and-instrumentation`
+- **Required**：`api-and-interface-design`
+- **Optional**：`source-driven-development` `security-and-hardening` `systematic-debugging` `observability-and-instrumentation`（无则按内联指令执行）
 
 #### 3.2 前端开发
-- 主 skill：`frontend-ui-engineering` + `design-taste-frontend`
-- 辅 skill：`impeccable`、`design-is`、`UI Design Master`
+- **Required**：`frontend-ui-engineering`
+- **Optional**：`design-taste-frontend` `impeccable` `design-is` `UI Design Master`（无则按内联抗 AI Slop 规则执行）
 
 #### 3.3 设计规范沉淀（首次必出）
 - 产出：`docs/design-system.md`
@@ -178,7 +169,9 @@ PM 明确说了某个技术选型时，相关子选型直接用该栈的最成�
 - 每次新功能开发前先 grep 设计规范；改规范要 PM 确认
 
 #### 3.4 增量交付
-- 主 skill：`incremental-implementation`
+- **Required**：`incremental-implementation`
+- **Optional**：无（内联增量交付原则即可）
+
 - 原则：每完成一个小功能就 commit，不要攒一堆一起提交
 
 #### 3.5 每步横向产出（强制）
@@ -191,7 +184,11 @@ PM 明确说了某个技术选型时，相关子选型直接用该栈的最成�
 
 **目标**：让 PM 拿着串行用例快速验一遍，主功能按需求工作。
 
-**Skill**：`code-test-expert` + `test-driven-development` + `verification-before-completion`
+**所需 Skills**：
+- **Required**：`code-test-expert` `verification-before-completion`
+- **Optional**：`test-driven-development`（无则跳过，串行用例已满足 MVP 需求）
+
+> `code-test-expert` 生成测试计划；`verification-before-completion` 实测验证（禁止 LLM 自检）。
 
 **做法**：
 1. 用 `code-test-expert` 生成测试计划（功能/性能/兼容性/异常路径）
@@ -225,7 +222,9 @@ python -c "import json; msgs=json.load(open('sample-chat.json')); assert all(k i
 
 **触发条件**：累计 commit ≥ 20 / 大版本(v0.X.0)发布前 / PM 主动要求。
 
-**Skill**：`code-review-and-quality` + `requesting-code-review` + `receiving-code-review`
+**所需 Skills**：
+- **Required**：`code-review-and-quality`
+- **Optional**：`requesting-code-review` `receiving-code-review`（无则按内联报告模板执行）
 
 **产出（给 PM 的报告模板）**：
 

@@ -41,44 +41,42 @@ npx skills add youngcintj/vibe-coding-sop
 
 ### 依赖说明
 
-vibe-coding-sop 依赖以下 skills，**required** 必须安装，**optional** 有则用无则 fallback：
+vibe-coding-sop **每个阶段独立列出 required/optional skills**，不需要一次性装完所有 skill。按阶段安装即可。
 
-**Required（核心）**：
+> optional skills 缺失时，vibe-coding-sop 会按内联指令 fallback 执行，不卡流程。
+
+| 阶段 | Required（必装） | Optional（推荐装） |
+|---|---|---|
+| **阶段1 需求确认** | `brainstorming` `idea-refine` | `interview-me` `plan-mode` |
+| **阶段2 技术评估** | `tech-stack-evaluator` | `doubt-driven-development` |
+| **阶段3 开发** | `git-workflow-and-versioning` `api-and-interface-design` `frontend-ui-engineering` `incremental-implementation` | `using-git-worktrees` `source-driven-development` `security-and-hardening` `systematic-debugging` `observability-and-instrumentation` `design-taste-frontend` `impeccable` `design-is` `UI Design Master` |
+| **阶段4 测试** | `code-test-expert` `verification-before-completion` | `test-driven-development` |
+| **阶段5 代码审查** | `code-review-and-quality` | `requesting-code-review` `receiving-code-review` |
+
+**推荐安装顺序**（按阶段走）：先装阶段1，再按需装后续阶段。
+
+**最小必装组合**（核心流程）：
 ```bash
-npx skills add brainstorming
-npx skills add idea-refine
-npx skills add tech-stack-evaluator
-npx skills add git-workflow-and-versioning
-npx skills add api-and-interface-design
-npx skills add frontend-ui-engineering
-npx skills add code-review-and-quality
-npx skills add code-test-expert
-npx skills add incremental-implementation
+npx skills add brainstorming idea-refine tech-stack-evaluator git-workflow-and-versioning api-and-interface-design frontend-ui-engineering code-review-and-quality code-test-expert incremental-implementation verification-before-completion
 ```
 
-**Optional（增强，推荐安装）**：
+**按阶段补装**：
 ```bash
+# 阶段1 补 optional
+npx skills add interview-me plan-mode
+
+# 阶段2 补 optional
 npx skills add doubt-driven-development
-npx skills add using-git-worktrees
-npx skills add source-driven-development
-npx skills add security-and-hardening
-npx skills add systematic-debugging
-npx skills add observability-and-instrumentation
-npx skills add design-taste-frontend
-npx skills add impeccable
-npx skills add design-is
+
+# 阶段3 补 optional
+npx skills add using-git-worktrees source-driven-development security-and-hardening systematic-debugging observability-and-instrumentation design-taste-frontend impeccable design-is
+
+# 阶段4 补 optional
 npx skills add test-driven-development
-npx skills add requesting-code-review
-npx skills add receiving-code-review
-```
 
-**可选：一键安装所有依赖**
-```bash
-# 批量安装所有 required + optional
-npx skills add brainstorming idea-refine tech-stack-evaluator git-workflow-and-versioning api-and-interface-design frontend-ui-engineering code-review-and-quality code-test-expert incremental-implementation doubt-driven-development source-driven-development security-and-hardening systematic-debugging observability-and-instrumentation design-taste-frontend impeccable design-is test-driven-development requesting-code-review receiving-code-review
+# 阶段5 补 optional
+npx skills add requesting-code-review receiving-code-review
 ```
-
-> optional skills 缺失时，vibe-coding-sop 会按内联指令执行，不卡流程。
 
 ### 方式 2:IDE 规则文件
 - **Cursor**:复制 `dist/.cursorrules` 到项目根

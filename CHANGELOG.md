@@ -7,9 +7,9 @@
 ### Added (依赖管理方案C)
 
 **三层依赖解决方案**：
-- `skill.json`：声明 required/optional skills 列表，`npx skills` 工具可读取
-- README：新增"依赖说明"章节，含 required + optional 完整安装命令，一键批量安装脚本
-- SKILL.md：阶段前置检查新增"依赖检查"小节，首次运行自动检查缺失项，optional 有 fallback 兜底
+- `skill.json`：声明按阶段分组的 required/optional skills 列表
+- README：新增按阶段分组的依赖表格，最小必装组合 + 按阶段补装脚本
+- SKILL.md：每个阶段独立列出 required/optional skills，required 加粗标注；前置检查改为"每阶段独立检查"说明
 
 ### Changed (V1→V2→V3 三轮实战迭代)
 
