@@ -21,6 +21,31 @@ PM 派给 AI 的代码任务，统一按此流程走：需求 → 评估 → 开
 - [ ] workspace 是新项目（有 AGENTS.md）或已有项目（读过 README + CHANGELOG）
 - [ ] 用户没说"随便改 / 一次性的"（说了就直接做，跳过 SOP）
 
+### 依赖检查（首次运行必做）
+
+检查以下 required skills 是否已安装。未安装时用 `npx skills add <name>` 补装，或跳过该 skill 按内联指令执行。
+
+**Required（核心，必须有）**：
+```
+brainstorming, idea-refine, tech-stack-evaluator,
+git-workflow-and-versioning, api-and-interface-design,
+frontend-ui-engineering, code-review-and-quality,
+code-test-expert, incremental-implementation
+```
+
+**Optional（有则用，无则内联 fallback）**：
+```
+doubt-driven-development, using-git-worktrees,
+source-driven-development, security-and-hardening,
+systematic-debugging, observability-and-instrumentation,
+design-taste-frontend, impeccable, design-is,
+test-driven-development, requesting-code-review,
+receiving-code-review
+```
+
+> 检查方法：列出 `~/.minimax/skills/` 或项目 `skills/` 目录，对照上述列表。
+> 缺失 optional skills 时，直接按 SKILL.md 内联指令执行，不卡流程。
+
 ### 任务类型判断
 
 根据性质选择分支：

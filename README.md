@@ -36,6 +36,50 @@
 npx skills add youngcintj/vibe-coding-sop
 ```
 
+> ⚠️ **首次安装后**：skill 依赖 9 个其他 skill，首次运行时会在"阶段前置检查"中提示缺失项。
+> 用 `npx skills add <name>` 补装缺失的 required skills。完整列表见下方。
+
+### 依赖说明
+
+vibe-coding-sop 依赖以下 skills，**required** 必须安装，**optional** 有则用无则 fallback：
+
+**Required（核心）**：
+```bash
+npx skills add brainstorming
+npx skills add idea-refine
+npx skills add tech-stack-evaluator
+npx skills add git-workflow-and-versioning
+npx skills add api-and-interface-design
+npx skills add frontend-ui-engineering
+npx skills add code-review-and-quality
+npx skills add code-test-expert
+npx skills add incremental-implementation
+```
+
+**Optional（增强，推荐安装）**：
+```bash
+npx skills add doubt-driven-development
+npx skills add using-git-worktrees
+npx skills add source-driven-development
+npx skills add security-and-hardening
+npx skills add systematic-debugging
+npx skills add observability-and-instrumentation
+npx skills add design-taste-frontend
+npx skills add impeccable
+npx skills add design-is
+npx skills add test-driven-development
+npx skills add requesting-code-review
+npx skills add receiving-code-review
+```
+
+**可选：一键安装所有依赖**
+```bash
+# 批量安装所有 required + optional
+npx skills add brainstorming idea-refine tech-stack-evaluator git-workflow-and-versioning api-and-interface-design frontend-ui-engineering code-review-and-quality code-test-expert incremental-implementation doubt-driven-development source-driven-development security-and-hardening systematic-debugging observability-and-instrumentation design-taste-frontend impeccable design-is test-driven-development requesting-code-review receiving-code-review
+```
+
+> optional skills 缺失时，vibe-coding-sop 会按内联指令执行，不卡流程。
+
 ### 方式 2:IDE 规则文件
 - **Cursor**:复制 `dist/.cursorrules` 到项目根
 - **Claude Code / OpenCode / Codex / Devin**:复制 `dist/CLAUDE.md` 到项目根

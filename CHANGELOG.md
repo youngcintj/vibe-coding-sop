@@ -4,6 +4,13 @@
 
 ## [v1.1.1] - 2026-07-24
 
+### Added (依赖管理方案C)
+
+**三层依赖解决方案**：
+- `skill.json`：声明 required/optional skills 列表，`npx skills` 工具可读取
+- README：新增"依赖说明"章节，含 required + optional 完整安装命令，一键批量安装脚本
+- SKILL.md：阶段前置检查新增"依赖检查"小节，首次运行自动检查缺失项，optional 有 fallback 兜底
+
 ### Changed (V1→V2→V3 三轮实战迭代)
 
 **V2 补丁（来自数据看板/微信脚本两次实际执行反馈）**：
