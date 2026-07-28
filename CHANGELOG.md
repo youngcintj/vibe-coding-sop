@@ -2,6 +2,15 @@
 
 所有重要变更都记录在这里。格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.0.0/)。
 
+## [v1.1.3] - 2026-07-28
+
+### Added (P0 工程化增强，对标高星 skill)
+
+- **SKILL.md frontmatter 标准元数据**：新增 `version` / `author` / `license: MIT` / `category: coding-workflow` / `updated`，对齐 alirezarezvani/claude-skills 与 anthropics/skills 规范，便于被发现、检索与版本化管理
+- **安全闸门（学 NeekChaw/RIPER-5）**：阶段 1（需求确认）、阶段 2（技术评估）顶部明确——本阶段只产出 Markdown 文档，禁止创建/修改任何项目文件、禁止任何 git 操作；仅阶段 3 起解除。将"评估分支"设计正式化
+- **渐进式加载指示（学 anthropics/skills progressive disclosure）**：每个阶段入口标注"进入本阶段时再读取 `references/stage-N-*.md`，平时不加载"，省 token、降过载
+- **修正残留旧 skill 名**：`plan-mode`→`planning-and-task-breakdown`、`systematic-debugging`→`debugging-and-error-recovery`
+
 ## [v1.1.1] - 2026-07-24
 
 ### Added (依赖管理方案C)

@@ -1,6 +1,6 @@
 # 阶段 1:需求确认(Requirements)
 
-> ⚠️ **Skill Fallback 声明**:本文档引用的 `brainstorming` / `interview-me` / `idea-refine` / `plan-mode` / `spec-driven-development` 等 skill 若不可用(如 Cursor / Cherry Studio / 网页 LLM / WorkBuddy 等),**按本文档内联指令执行,不要因为缺 skill 就跳过本阶段**。
+> ⚠️ **Skill Fallback 声明**:本文档引用的 `brainstorming` / `interview-me` / `idea-refine` / `planning-and-task-breakdown` / `spec-driven-development` 等 skill 若不可用(如 Cursor / Cherry Studio / 网页 LLM / WorkBuddy 等),**按本文档内联指令执行,不要因为缺 skill 就跳过本阶段**。
 
 ## 目的
 
@@ -13,7 +13,7 @@
 | `brainstorming` | 协作式需求探索,把模糊想法变成具体设计 |
 | `interview-me` | 逐一提问挖掘用户真正想要的,不是他们觉得应该要的 |
 | `idea-refine` | 把粗糙想法通过结构化打磨成清晰可执行概念 |
-| `plan-mode` | 任务有歧义时先讨论,别直接写 |
+| `planning-and-task-breakdown` | 任务有歧义时先讨论,别直接写 |
 | `spec-driven-development` | 写代码前先有结构化规格 |
 
 ## 工作流

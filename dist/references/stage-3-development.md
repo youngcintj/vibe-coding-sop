@@ -1,6 +1,6 @@
 # 阶段 3:开发(Development)
 
-> ⚠️ **Skill Fallback 声明**:本文档引用的 `api-and-interface-design` / `source-driven-development` / `security-and-hardening` / `frontend-ui-engineering` / `design-taste-frontend` / `impeccable` / `design-is` / `UI Design Master` / `arco-design` / `senior-fullstack` / `systematic-debugging` / `debugging-and-error-recovery` / `observability-and-instrumentation` / `incremental-implementation` 等 skill 若不可用,**按本文档"抗 AI Slop 自检清单" + 各小节内联指令执行**,不要因为缺 skill 就跳过本阶段。
+> ⚠️ **Skill Fallback 声明**:本文档引用的 `api-and-interface-design` / `source-driven-development` / `security-and-hardening` / `frontend-ui-engineering` / `design-taste-frontend` / `impeccable` / `design-is` / `UI Design Master` / `arco-design` / `senior-fullstack` / `debugging-and-error-recovery` / `observability-and-instrumentation` / `incremental-implementation` 等 skill 若不可用,**按本文档"抗 AI Slop 自检清单" + 各小节内联指令执行**,不要因为缺 skill 就跳过本阶段。
 
 ## 目的
 
@@ -35,7 +35,7 @@ git commit -m "chore: init project"
 | `source-driven-development` | 框架相关决策以官方文档为依据,禁止凭记忆 |
 | `security-and-hardening` | 输入验证 / 认证 / 数据存储 / 第三方集成审查 |
 | `senior-fullstack` | 脚手架参考(Next.js / FastAPI / MERN / Django) |
-| `systematic-debugging` | 报错时系统化根因,不靠试 |
+| `debugging-and-error-recovery` | 报错时系统化根因,不靠试 |
 | `observability-and-instrumentation` | 日志 / 指标 / 追踪 / 告警 |
 
 **工作流**:
@@ -43,7 +43,7 @@ git commit -m "chore: init project"
 2. 用 `source-driven-development` 查官方文档,不凭记忆
 3. 用 `senior-fullstack` 选脚手架
 4. 写代码 + 用 `security-and-hardening` 审查
-5. 报错用 `systematic-debugging` 定位,不靠 try-error
+5. 报错用 `debugging-and-error-recovery` 定位,不靠 try-error
 6. 生产前用 `observability-and-instrumentation` 加可观测性
 
 **拍板点**:
@@ -202,7 +202,7 @@ git commit -m "chore: init project"
 
 ## 3.4 增量交付
 
-**用 skill**:`incremental-implementation` + `executing-plans`
+**用 skill**:`incremental-implementation`
 
 **原则**:
 - 每完成小功能 → commit

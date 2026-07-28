@@ -6,8 +6,13 @@ description: |
   触发词（部分匹配即加载）："做个 demo"、"想做一个"、"帮我开发"、"写个功能"、
   "coding 任务"、"vibe-coding"、"按 SOP"、"开始工作流"、"我们走流程吧"。
 
-  不触发：调试报错（用 systematic-debugging）、单次问答（直接答）、纯调研（用 deep-research）、
+  不触发：调试报错（用 debugging-and-error-recovery）、单次问答（直接答）、纯调研（用 deep-research）、
   用户明确说"随便改 / 一次性的 / 你直接来"（跳过流程直接做）。
+version: 1.1.3
+author: youngcintj
+license: MIT
+category: coding-workflow
+updated: 2026-07-28
 ---
 
 # Vibe-Coding SOP
@@ -41,6 +46,10 @@ PM 派给 AI 的代码任务，统一按此流程走：需求 → 评估 → 开
 
 ### 阶段 1：需求确认
 
+> 📂 **渐进式加载**：进入本阶段时再读取 `references/stage-1-requirements.md`，平时不加载。
+>
+> 🚫 **安全闸门（阶段 1-2 强制）**：本阶段（需求/评估）**只产出 Markdown 文档**。禁止创建/修改任何项目文件、禁止任何 git 操作（`git init` / `add` / `commit` 等）。仅在阶段 3 起才允许动手写代码——这是"评估分支"设计的正式化：需求与方案未获 PM 拍板前，AI 不得落地。
+
 **目标**：把模糊想法变成有验收标准的需求文档。
 
 **Skill**：`brainstorming` + `interview-me` + `idea-refine`
@@ -49,7 +58,7 @@ PM 派给 AI 的代码任务，统一按此流程走：需求 → 评估 → 开
 1. 用 `interview-me` 逐一挖掘用户真正想要的，而非他们认为应该要的
 2. 用 `brainstorming` 协作式探索，把歧义摊开
 3. 用 `idea-refine` 打磨成清晰可执行的概念
-4. 如果需求边界不清，先用 `plan-mode` 讨论清楚再继续
+4. 如果需求边界不清，先用 `planning-and-task-breakdown` 讨论清楚再继续
 
 **推断原则（减少伪问题）**：
 PM 明确说了某个技术选型时，相关子选型直接用该栈的最成熟方案，**只在真正有分歧时才问**：
@@ -92,6 +101,10 @@ PM 明确说了某个技术选型时，相关子选型直接用该栈的最成�
 
 ### 阶段 2：技术评估（必做，不可跳过）
 
+> 📂 **渐进式加载**：进入本阶段时再读取 `references/stage-2-tech-eval.md`，平时不加载。
+>
+> 🚫 **安全闸门（阶段 1-2 强制）**：延续阶段 1——本阶段只产出评估矩阵/方案文档，**不创建/修改项目文件、不执行任何 git 操作**。方案未获 PM 拍板前不得进入开发。
+
 **目标**：用 6 维矩阵选出推荐方案，PM 确认后才进开发。
 
 **Skill**：`tech-stack-evaluator` + `doubt-driven-development`
@@ -129,6 +142,10 @@ PM 明确说了某个技术选型时，相关子选型直接用该栈的最成�
 
 ### 阶段 3：开发（核心）
 
+> 📂 **渐进式加载**：进入本阶段时再读取 `references/stage-3-development.md`，平时不加载。
+>
+> ✅ **安全闸门解除**：从本阶段起允许创建/修改项目文件、执行 git 操作（遵循 3.0 强制 Git 初始化）。
+
 **目标**：后端可靠 + 前端有审美 + 设计规范沉淀。
 
 #### 3.0 Git 初始化（强制，第一件事）
@@ -147,7 +164,7 @@ PM 明确说了某个技术选型时，相关子选型直接用该栈的最成�
 
 #### 3.1 后端开发
 - 主 skill：`api-and-interface-design`
-- 辅 skill：`source-driven-development`、`security-and-hardening`、`systematic-debugging`、`observability-and-instrumentation`
+- 辅 skill：`source-driven-development`、`security-and-hardening`、`debugging-and-error-recovery`、`observability-and-instrumentation`
 
 #### 3.2 前端开发
 - 主 skill：`frontend-ui-engineering` + `design-taste-frontend`
@@ -210,6 +227,8 @@ PM 明确说了某个技术选型时，相关子选型直接用该栈的最成�
 
 ### 阶段 4：测试
 
+> 📂 **渐进式加载**：进入本阶段时再读取 `references/stage-4-testing.md`，平时不加载。
+
 **目标**：让 PM 拿着串行用例快速验一遍，主功能按需求工作。
 
 **Skill**：`code-test-expert` + `test-driven-development` + `verification-before-completion`
@@ -242,11 +261,13 @@ python -c "import json; msgs=json.load(open('sample-chat.json')); assert all(k i
 
 ### 阶段 5：代码审查
 
+> 📂 **渐进式加载**：进入本阶段时再读取 `references/stage-5-code-review.md`，平时不加载。
+
 **目标**：定期让 PM 看到优化点 + 没把握的地方，PM 决定修不修。
 
 **触发条件**：累计 commit ≥ 20 / 大版本(v0.X.0)发布前 / PM 主动要求。
 
-**Skill**：`code-review-and-quality` + `requesting-code-review` + `receiving-code-review`
+**Skill**：`code-review-and-quality`（已合并 `requesting-code-review` / `receiving-code-review` 职责）
 
 **产出（给 PM 的报告模板）**：
 

@@ -47,11 +47,11 @@ vibe-coding-sop **每个阶段独立列出 required/optional skills**，不需�
 
 | 阶段 | Required（必装） | Optional（推荐装） |
 |---|---|---|
-| **阶段1 需求确认** | `brainstorming` `idea-refine` | `interview-me` `plan-mode` |
+| **阶段1 需求确认** | `brainstorming` `idea-refine` | `interview-me` `planning-and-task-breakdown` |
 | **阶段2 技术评估** | `tech-stack-evaluator` | `doubt-driven-development` |
-| **阶段3 开发** | `git-workflow-and-versioning` `api-and-interface-design` `frontend-ui-engineering` `incremental-implementation` | `using-git-worktrees` `source-driven-development` `security-and-hardening` `systematic-debugging` `observability-and-instrumentation` `design-taste-frontend` `impeccable` `design-is` `UI Design Master` |
+| **阶段3 开发** | `git-workflow-and-versioning` `api-and-interface-design` `frontend-ui-engineering` `incremental-implementation` | `using-git-worktrees` `source-driven-development` `security-and-hardening` `debugging-and-error-recovery` `observability-and-instrumentation` `design-taste-frontend` `impeccable` `design-is` `UI Design Master` |
 | **阶段4 测试** | `code-test-expert` `verification-before-completion` | `test-driven-development` |
-| **阶段5 代码审查** | `code-review-and-quality` | `requesting-code-review` `receiving-code-review` |
+| **阶段5 代码审查** | `code-review-and-quality` | （已合并 requesting/receiving 自评与反馈职责） |
 
 **推荐安装顺序**（按阶段走）：先装阶段1，再按需装后续阶段。
 
@@ -63,19 +63,18 @@ npx skills add brainstorming idea-refine tech-stack-evaluator git-workflow-and-v
 **按阶段补装**：
 ```bash
 # 阶段1 补 optional
-npx skills add interview-me plan-mode
+npx skills add interview-me planning-and-task-breakdown
 
 # 阶段2 补 optional
 npx skills add doubt-driven-development
 
 # 阶段3 补 optional
-npx skills add using-git-worktrees source-driven-development security-and-hardening systematic-debugging observability-and-instrumentation design-taste-frontend impeccable design-is
+npx skills add using-git-worktrees source-driven-development security-and-hardening debugging-and-error-recovery observability-and-instrumentation design-taste-frontend impeccable design-is
 
 # 阶段4 补 optional
 npx skills add test-driven-development
 
-# 阶段5 补 optional
-npx skills add requesting-code-review receiving-code-review
+# 阶段5 optional 已合并进 code-review-and-quality,无需单独安装
 ```
 
 ### 方式 2:IDE 规则文件

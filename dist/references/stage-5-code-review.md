@@ -18,9 +18,7 @@
 
 | skill | 用途 |
 |---|---|
-| `code-review-and-quality` | 多维度审查(正确性 / 可读性 / 安全 / 性能 / 可维护) |
-| `requesting-code-review` | 合并前自评 |
-| `receiving-code-review` | 评估 review 反馈,逐条验证 |
+| `code-review-and-quality` | 多维度审查(正确性 / 可读性 / 安全 / 性能 / 可维护),已合并原 requesting/receiving 自评与反馈职责 |
 | `code-simplification` | 简化代码不改行为 |
 | `doubt-driven-development` | 对抗性审查,假设反面成立 |
 
@@ -75,7 +73,7 @@
    ↓
 1. code-review-and-quality 多维度审查
    ↓
-2. requesting-code-review 自评
+2. code-review-and-quality 自评(合并原 requesting/receiving 职责)
    ↓
 3. doubt-driven-development 对抗性审查
    ↓
@@ -121,7 +119,7 @@
 
 ## 跟阶段 3 的关系
 
-- 阶段 3 增量交付时,**每个小功能 commit 前**自评(用 `requesting-code-review`)
+- 阶段 3 增量交付时,**每个小功能 commit 前**自评(用 `code-review-and-quality`)
 - 阶段 5 是**整体回顾**,在阶段 3 的基础上做全局审查
 - 阶段 5 发现的**结构性问题** → 回阶段 3 重构
 

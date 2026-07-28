@@ -6,7 +6,7 @@ description: |
   触发词（部分匹配即加载）："做个 demo"、"想做一个"、"帮我开发"、"写个功能"、
   "coding 任务"、"vibe-coding"、"按 SOP"、"开始工作流"、"我们走流程吧"。
 
-  不触发：调试报错（用 systematic-debugging）、单次问答（直接答）、纯调研（用 deep-research）、
+  不触发：调试报错（用 debugging-and-error-recovery）、单次问答（直接答）、纯调研（用 deep-research）、
   用户明确说"随便改 / 一次性的 / 你直接来"（跳过流程直接做）。
 ---
 
@@ -52,7 +52,7 @@ PM 派给 AI 的代码任务，统一按此流程走：需求 → 评估 → 开
 
 **所需 Skills**：
 - **Required**：`brainstorming` `idea-refine`
-- **Optional**：`interview-me` `plan-mode`（无则按内联指令替代，不卡流程）
+- **Optional**：`interview-me` `planning-and-task-breakdown`（无则按内联指令替代，不卡流程）
 
 > `brainstorming` 协作式探索；`idea-refine` 打磨成可执行概念。两者都没有时，用内联提问替代。
 
@@ -60,7 +60,7 @@ PM 派给 AI 的代码任务，统一按此流程走：需求 → 评估 → 开
 1. 用 `interview-me` 逐一挖掘用户真正想要的，而非他们认为应该要的
 2. 用 `brainstorming` 协作式探索，把歧义摊开
 3. 用 `idea-refine` 打磨成清晰可执行的概念
-4. 如果需求边界不清，先用 `plan-mode` 讨论清楚再继续
+4. 如果需求边界不清，先用 `planning-and-task-breakdown` 讨论清楚再继续
 
 **推断原则（减少伪问题）**：
 PM 明确说了某个技术选型时，相关子选型直接用该栈的最成熟方案，**只在真正有分歧时才问**：
@@ -151,7 +151,7 @@ PM 明确说了某个技术选型时，相关子选型直接用该栈的最成�
 
 #### 3.1 后端开发
 - **Required**：`api-and-interface-design`
-- **Optional**：`source-driven-development` `security-and-hardening` `systematic-debugging` `observability-and-instrumentation`（无则按内联指令执行）
+- **Optional**：`source-driven-development` `security-and-hardening` `debugging-and-error-recovery` `observability-and-instrumentation`（无则按内联指令执行）
 
 #### 3.2 前端开发
 - **Required**：`frontend-ui-engineering`
@@ -224,7 +224,7 @@ python -c "import json; msgs=json.load(open('sample-chat.json')); assert all(k i
 
 **所需 Skills**：
 - **Required**：`code-review-and-quality`
-- **Optional**：`requesting-code-review` `receiving-code-review`（无则按内联报告模板执行）
+- **Optional**：（已合并进 `code-review-and-quality`，无需单独安装）
 
 **产出（给 PM 的报告模板）**：
 
