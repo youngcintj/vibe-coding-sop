@@ -106,6 +106,15 @@ vibe-coding-sop/
 ├── CLAUDE.md                   # Claude Code 规则
 ├── prompts/
 │   └── system-prompt-block.md  # 可粘贴的 prompt 块
+├── commands/                   # 可选 Claude Code 斜杠命令
+│   ├── vibe-sop.md             #   /vibe-sop 启动全流程
+│   └── vibe-review.md          #   /vibe-review 触发代码审查
+├── hooks/                      # 可选 Claude Code 钩子
+│   ├── guard-stage.sh          #   PreToolUse 阶段1-2禁写(安全闸门)
+│   ├── commit-reminder.sh      #   PostToolUse 提醒 git commit
+│   └── README.md               #   安装说明
+├── examples/                   # 端到端示例
+│   └── end-to-end-todo-cli.md  #   一个 CLI 待办的完整走查
 └── references/
     ├── stage-1-requirements.md
     ├── stage-2-tech-eval.md
@@ -116,6 +125,7 @@ vibe-coding-sop/
 
 ## 修订记录
 
+- **v1.2.0 (2026-07-28)**: P1 差异化增强——可选 slash 命令(`commands/`)、安全钩子(`hooks/`)、端到端示例(`examples/`)
 - **v1.1.3 (2026-07-28)**: P0 工程化——frontmatter 标准元数据 + 阶段 1-2 安全闸门 + 渐进式加载指示
 - **v1.0 (2026-07-23)**: 首发。5 阶段 + 4 横向 + 6 维矩阵定型
 

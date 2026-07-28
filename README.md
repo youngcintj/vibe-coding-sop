@@ -106,6 +106,15 @@ vibe-coding-sop/
 │   ├── CLAUDE.md                      # Claude Code 规则
 │   ├── package.json                   # npx skills 元数据
 │   ├── prompts/system-prompt-block.md # 可粘贴 prompt 块
+│   ├── commands/                     # 可选 Claude Code 斜杠命令
+│   │   ├── vibe-sop.md
+│   │   └── vibe-review.md
+│   ├── hooks/                        # 可选 Claude Code 钩子
+│   │   ├── guard-stage.sh
+│   │   ├── commit-reminder.sh
+│   │   └── README.md
+│   ├── examples/                     # 端到端示例
+│   │   └── end-to-end-todo-cli.md
 │   └── references/                    # 5 份阶段详细文档
 │       ├── stage-1-requirements.md
 │       ├── stage-2-tech-eval.md

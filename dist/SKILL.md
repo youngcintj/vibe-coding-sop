@@ -8,7 +8,7 @@ description: |
 
   不触发：调试报错（用 debugging-and-error-recovery）、单次问答（直接答）、纯调研（用 deep-research）、
   用户明确说"随便改 / 一次性的 / 你直接来"（跳过流程直接做）。
-version: 1.1.3
+version: 1.2.0
 author: youngcintj
 license: MIT
 category: coding-workflow
@@ -410,3 +410,27 @@ Git init（第一天）+ CHANGELOG 建立
    ↓
 持续迭代（回到阶段 3）
 ```
+
+## 可选增强：命令 / 钩子 / 示例
+
+纯 Markdown 的 SOP 也能"挂"上可执行工具，落地率更高（学 `gsd-build/get-shit-done`）。以下均为**可选**，不装也能照常跑流程。
+
+### 1) 斜杠命令（Claude Code）
+
+复制到 `.claude/commands/` 即可用：
+
+- `commands/vibe-sop.md` → `/vibe-sop [需求]`：自动 git init（新项目）+ 从阶段 1 启动全流程
+- `commands/vibe-review.md` → `/vibe-review [范围]`：触发阶段 5 代码审查，产出给 PM 的报告
+
+### 2) 钩子（Claude Code）
+
+`hooks/` 提供两个脚本（详见 `hooks/README.md`）：
+
+- `guard-stage.sh`（PreToolUse）：阶段 1-2 期间**机器强制**禁止写文件，只许产出 Markdown——把「安全闸门」从文字规则变成硬约束
+- `commit-reminder.sh`（PostToolUse）：阶段 3+ 编辑后提醒 git commit；未 git init 时提醒初始化
+
+钩子靠 `.vibe-stage` 标记判断阶段（值 `1`~`5`），命令 `/vibe-sop` 已包含写入该标记。
+
+### 3) 端到端示例
+
+`examples/end-to-end-todo-cli.md`：用一个「CLI 待办清单」项目，完整演示阶段 1→5 的产出样本，新用户照着走一遍就懂。

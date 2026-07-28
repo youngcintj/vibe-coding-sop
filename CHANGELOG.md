@@ -2,6 +2,15 @@
 
 所有重要变更都记录在这里。格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.0.0/)。
 
+## [v1.2.0] - 2026-07-28
+
+### Added (P1 差异化增强，对标 get-shit-done 工具化能力)
+
+- **可选斜杠命令 `commands/`**：`vibe-sop.md`（`/vibe-sop` 自动 git init + 从阶段 1 启动全流程）、`vibe-review.md`（`/vibe-review` 触发阶段 5 审查）。把纯指引变成可一键执行的工具，落地率更高
+- **可选安全钩子 `hooks/`**：`guard-stage.sh`（PreToolUse，阶段 1-2 机器强制禁写文件，把"安全闸门"从文字规则变成硬约束）、`commit-reminder.sh`（PostToolUse，阶段 3+ 提醒 git commit / 未 init 提醒初始化）。脚本只读状态、不联网、不写文件，已通过逻辑自测
+- **端到端示例 `examples/end-to-end-todo-cli.md`**：用一个「CLI 待办清单」完整演示阶段 1→5 的产出样本，新用户照走一遍即懂（学 NeekChaw/RIPER-5 使用示例）
+- **SKILL.md 新增「可选增强」段**：统一指向命令 / 钩子 / 示例
+
 ## [v1.1.3] - 2026-07-28
 
 ### Added (P0 工程化增强，对标高星 skill)
